@@ -1,0 +1,81 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "sirus-next",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "http": {
+        "all": true,
+        "scope": [
+          "https://forum.sirus.su/**",
+          "https://api.sirus.su/api/**",
+          "https://cdn.scourge.tech/**"
+        ],
+        "request": true
+      },
+      "protocol": {
+        "all": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
+      }
+    },
+    "windows": [
+      {
+        "transparent": true,
+        "decorations": false,
+        "fullscreen": false,
+        "resizable": false,
+        "title": "sirus-next",
+        "width": 1366,
+        "height": 900,
+        "minWidth": 1366,
+        "minHeight": 600,
+        "center": true,
+        "maximizable": false,
+        "fullscreen": false,
+        "maximized": false
+      }
+    ],
+    "security": {
+      "csp": null
+    },
+    "macOSPrivateApi": true,
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "com.tauri.dev",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    }
+  }
+}

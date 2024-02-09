@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 16px;
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+  background: transparent;
+  border-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 18px;
+  /*background: rgba(91 91 91 / 50%);*/
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0 0 0 / 0%);
+  background-clip: padding-box;
+  background-color: #aeb3b9;
+  -webkit-border-radius: 7px;
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0 0 0 / 5%),
+    inset 1px 1px 0 rgba(0 0 0 / 5%);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+button {
+  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+}
