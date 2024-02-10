@@ -66,7 +66,7 @@
       "active": true,
       "targets": "all",
       "identifier": "su.sirus.launcher",
-      "icon": ["icons/logo-sirus.png"]
+      "icon": ["icons/logo-sirus.png", "icons/icon.ico", "icons/icon.png"]
     },
     "systemTray": {
       "iconPath": "icons/logo-sirus.png"
