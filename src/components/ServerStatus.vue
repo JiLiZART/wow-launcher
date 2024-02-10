@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const { items } = defineProps<{
-  items: Array<{ id: string; name: string; realm: string; is_live: boolean }>;
+  items: Array<{
+    id: number;
+    is_live: boolean;
+    last: unknown;
+    name: string;
+    realm: string;
+    short: string;
+  }>;
 }>();
 </script>
 
