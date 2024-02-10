@@ -10,11 +10,18 @@ import Button from "./components/Button.vue";
 
 import { getVersion } from "@tauri-apps/api/app";
 import { onMounted, ref } from "vue";
-import { NewsItem, NewsResponse, httpGet } from "./api";
+import {
+  NewsItem,
+  NewsResponse,
+  StatusResponse,
+  StatusRealm,
+  httpGet,
+} from "./api";
 
 const version = ref("0.0.0");
 const items = ref<NewsResponse["data"]>([]);
 const cardItem = ref<NewsItem>();
+const statusRealms = ref<StatusRealm[]>([]);
 
 console.log("getVersion", getVersion);
 
@@ -30,7 +37,15 @@ onMounted(async () => {
   // version.value = await getVersion();
   console.log(version.value);
 
-  const response = await httpGet("https://api.sirus.su/api/server/status");
+  const status = await httpGet<StatusResponse>(
+    "https://sirus.su/api/sirus?lang=ru"
+  );
+
+  if (status) {
+    statusRealms.value = status.data.realms;
+    version.value = status.data.version;
+  }
+
   const newsResponse = await httpGet<NewsResponse>(
     "https://api.sirus.su/api/news"
   );
@@ -39,7 +54,6 @@ onMounted(async () => {
     items.value = newsResponse.data.data.splice(0, 3);
   }
 
-  console.log("response", response);
   console.log("response", newsResponse);
 });
 </script>
@@ -64,7 +78,7 @@ onMounted(async () => {
       <div id="logo"></div>
       <div class="online">15897 online</div>
 
-      <ServerStatus />
+      <ServerStatus :items="statusRealms" />
     </template>
     <template v-slot:footer>
       <section class="footer-content">

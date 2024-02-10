@@ -1,22 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { items } = defineProps<{
+  items: Array<{ id: string; name: string; realm: string; is_live: boolean }>;
+}>();
+</script>
 
 <template>
   <div class="server-status">
-    <div class="server-status-item">
-      <span class="server-status-icon"></span>
-      <span>Scourge x2</span>
-    </div>
-    <div class="server-status-item">
-      <span class="server-status-icon"></span>
-      <span>Algalon x4</span>
-    </div>
-    <div class="server-status-item">
-      <span class="server-status-icon"></span>
-      <span>Soulseeker x1</span>
-    </div>
-    <div class="server-status-item">
-      <span class="server-status-icon"></span>
-      <span>Sirus x5</span>
+    <div v-for="item in items" :key="item.id" class="server-status-item">
+      <span class="server-status-icon" :class="{ live: item.is_live }"></span>
+      <span>{{ item.realm }}</span>
     </div>
   </div>
 </template>
@@ -46,6 +38,10 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  background: #ccc;
+}
+
+.server-status-icon.live {
   background: #6ddb03;
 }
 </style>

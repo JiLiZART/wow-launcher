@@ -15,6 +15,21 @@ export type NewsResponse = {
 
 export type NewsItem = NewsResponse["data"][0];
 
+export type StatusResponse = {
+  online_count: number;
+  version: string;
+  realms: Array<{
+    id: number;
+    is_live: boolean;
+    last: unknown;
+    name: string;
+    realm: string;
+    short: string;
+  }>;
+};
+
+export type StatusRealm = StatusResponse["realms"][0];
+
 export function httpGet<T>(url: string) {
   return fetch<T>(url, {
     method: "GET",

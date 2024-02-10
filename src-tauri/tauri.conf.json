@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "sirus-next",
-    "version": "0.0.0"
+    "version": "1.3.1"
   },
   "tauri": {
     "allowlist": {
@@ -21,7 +21,8 @@
         "scope": [
           "https://forum.sirus.su/**",
           "https://api.sirus.su/api/**",
-          "https://cdn.scourge.tech/**"
+          "https://cdn.scourge.tech/**",
+          "https://sirus.su/**"
         ],
         "request": true
       },
@@ -64,14 +65,8 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.tauri.dev",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ]
+      "identifier": "su.sirus.launcher",
+      "icon": ["icons/logo-sirus.png"]
     },
     "systemTray": {
       "iconPath": "icons/logo-sirus.png"
