@@ -20,8 +20,8 @@ fn main() {
                 size: _,
                 ..
             } => {
-                app.hide();
-                app.show();
+                // app.hide();
+                // app.show();
                 println!("system tray received a left click");
             }
             SystemTrayEvent::RightClick {
