@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { invoke } from "@tauri-apps/api/tauri";
 import { appWindow } from "@tauri-apps/api/window";
 
 const close = () => {
