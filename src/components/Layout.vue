@@ -24,7 +24,8 @@ import Titlebar from "./Titlebar.vue";
 
 <style scoped>
 header {
-  background: rgba(60, 42, 41, 0.8);
+  /* background: rgba(60, 42, 41, 0.8); */
+  background: rgba(49, 51, 57, 0.6);
   padding: 12px;
   border-radius: 8px;
 }
@@ -34,8 +35,7 @@ div#app {
   position: relative;
   padding: 24px;
   border-radius: 12px;
-  background: url("https://wow.zamimg.com/uploads/screenshots/normal/1059910.jpg")
-    no-repeat;
+  background: url("../assets/background-legion.jpg") no-repeat;
   background-size: cover;
   padding-top: 54px;
   padding-bottom: 12px;

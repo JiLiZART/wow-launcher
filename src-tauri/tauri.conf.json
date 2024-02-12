@@ -13,7 +13,9 @@
     "allowlist": {
       "all": false,
       "shell": {
-        "all": false,
+        "all": true,
+        "execute": true,
+        "sidecar": true,
         "open": true
       },
       "http": {
@@ -54,7 +56,6 @@
         "minHeight": 600,
         "center": true,
         "maximizable": false,
-        "fullscreen": false,
         "maximized": false
       }
     ],

@@ -49,6 +49,10 @@ const emit = defineEmits<{
   justify-content: stretch;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card-image {
   border-radius: 8px 8px 0 0;
   overflow: hidden;
@@ -59,17 +63,37 @@ const emit = defineEmits<{
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+  transition: opacity 0.35s, transform 0.35s;
+  transform: scale(1.15);
+}
+
+.card:hover .card-image img {
+  transform: scale(1);
 }
 
 .card-category {
-  font-size: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .card-meta {
   /* background: #22252b; */
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(49, 51, 57, 0.6);
   padding: 20px;
   color: white;
   height: 120px;
+  transition: background 200ms ease-in;
+}
+
+.card:hover .card-meta {
+  background: rgba(49, 51, 57, 0.7);
 }
 </style>

@@ -1,23 +1,36 @@
 <script setup lang="ts">
 import { reactive } from "vue";
+import { open } from "@tauri-apps/api/shell";
 
-const { variant, href } = defineProps<{
+const { variant, text, href } = defineProps<{
   variant?: string;
+  text?: string;
   href?: string;
 }>();
 
+const emit = defineEmits(["click"]);
+
 const classObject = reactive({
   [`variant-${variant}`]: !!variant,
+  [`text-${text}`]: !!text,
 });
 
-console.log("variant", variant, href);
+const onClick = (e: MouseEvent) => {
+  if (href) {
+    e.preventDefault();
+
+    open(href);
+  } else {
+    emit("click", e);
+  }
+};
 </script>
 
 <template>
-  <a v-if="href" :class="classObject">
+  <a v-if="href" :class="classObject" href="#" @click="onClick">
     <slot></slot>
   </a>
-  <button v-else type="button" :class="classObject">
+  <button v-else type="button" :class="classObject" @click="onClick">
     <slot></slot>
   </button>
 </template>
@@ -65,6 +78,22 @@ button:hover {
   border-color: #b23300;
 }
 
+.variant-login {
+  height: 48px;
+  color: #fff;
+  background: #0074e0;
+  padding: 0 24px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  filter: brightness(100%);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 button.variant-nav {
   font-size: 18px;
   font-weight: 600;
@@ -92,5 +121,10 @@ a.variant-nav {
 
 a.variant-nav:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+
+a.text-left,
+button.text-left {
+  justify-content: flex-start;
 }
 </style>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import UsersIcon from "./UsersIcon.vue";
+
 const { items } = defineProps<{
   items: Array<{
     id: number;
-    is_live: boolean;
-    last: unknown;
     name: string;
-    realm: string;
-    short: string;
+    isOnline: boolean;
+    online: number;
   }>;
 }>();
 </script>
@@ -14,8 +14,9 @@ const { items } = defineProps<{
 <template>
   <div class="server-status">
     <div v-for="item in items" :key="item.id" class="server-status-item">
-      <span class="server-status-icon" :class="{ live: item.is_live }"></span>
-      <span>{{ item.realm }}</span>
+      <span class="server-status-icon" :class="{ live: item.isOnline }"></span>
+      <span>{{ item.name.split(" -")[0] }}</span>
+      <span class="server-status-online"><UsersIcon /> {{ item.online }}</span>
     </div>
   </div>
 </template>
@@ -50,5 +51,10 @@ const { items } = defineProps<{
 
 .server-status-icon.live {
   background: #6ddb03;
+}
+
+.server-status-online {
+  margin-left: auto;
+  font-size: 14px;
 }
 </style>
