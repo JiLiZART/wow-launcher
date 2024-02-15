@@ -56,7 +56,7 @@ const withSecondary = slots?.secondary?.();
   position: relative;
   perspective: 1000px;
   display: inline-block;
-  z-index: 1;
+  z-index: 4;
 }
 
 .dropdown-menu {

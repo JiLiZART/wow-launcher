@@ -40,6 +40,7 @@ div#app {
   padding-top: 54px;
   padding-bottom: 12px;
   border: 1px solid #44454c;
+  overflow: hidden;
 }
 
 div#container {

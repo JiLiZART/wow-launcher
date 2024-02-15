@@ -27,6 +27,16 @@ export type StatusResponse = {
 
 export type StatusRealm = StatusResponse["realms"][0];
 
+export type AddonItem = {
+  id: number;
+  name: string;
+  version: string;
+  category: number;
+  downloads: number;
+  repo_updated_at: string;
+  repository: string;
+};
+
 export function httpGet<T>(url: string) {
   return fetch<T>(url, {
     method: "GET",

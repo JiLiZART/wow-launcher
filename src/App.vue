@@ -7,11 +7,13 @@ import Layout from "./components/Layout.vue";
 import ProgressBar from "./components/ProgressBar.vue";
 import ServerStatus from "./components/ServerStatus.vue";
 import Button from "./components/Button.vue";
+import Addons from "./components/Addons.vue";
 import UsersIcon from "./components/UsersIcon.vue";
 import DropdownMenu from "./components/DropdownMenu.vue";
-import AccountOutline from "./components/AccountOutline.vue";
+import AccountOutlineIcon from "./components/AccountOutlineIcon.vue";
 import ChevronDown from "./components/ChevronDown.vue";
 import Link from "./components/Link.vue";
+import { Icon } from "@iconify/vue";
 
 import { getVersion } from "@tauri-apps/api/app";
 
@@ -69,10 +71,10 @@ onMounted(async () => {
 
 <template>
   <Layout>
-    <template v-slot:header>
+    <template #header>
       <na class="primary-nav">
-        <Button variant="nav" href="#">Community</Button>
         <Button variant="nav" href="#">News</Button>
+        <Button variant="nav" href="#">Addons</Button>
         <DropdownMenu open-on="hover">
           <Button variant="nav"> Game Info </Button>
           <template #primary>
@@ -99,7 +101,7 @@ onMounted(async () => {
         </DropdownMenu>
         <DropdownMenu open-on="hover">
           <Button variant="nav">
-            <AccountOutline /> Account <ChevronDown />
+            <AccountOutlineIcon />&nbsp;Account <ChevronDown />
           </Button>
           <template #primary>
             <div class="dropdown-login">
@@ -117,10 +119,11 @@ onMounted(async () => {
       </aside>
     </template>
 
+    <Addons />
     <CardFull v-if="cardItem" :item="cardItem" @back="hideCard" />
     <CardList v-else :items="items" @show="showCard" />
 
-    <template v-slot:aside>
+    <template #aside>
       <div id="logo"></div>
       <div class="users-online">
         <UsersIcon /> {{ online }} <span class="users-online-meta">online</span>
@@ -140,9 +143,20 @@ onMounted(async () => {
 
       <ServerStatus :items="statusRealms" />
     </template>
-    <template v-slot:footer>
+    <template #footer>
       <section class="footer-content">
-        <Button variant="play">Play</Button>
+        <div class="play-button">
+          <Button class="play-button-run" variant="play"> Play </Button>
+          <Button class="play-button-edit" variant="play">
+            <Icon
+              icon="mdi:settings"
+              width="1.5rem"
+              height="1.5rem"
+              color="white"
+            />
+          </Button>
+        </div>
+
         <ProgressBar />
         <div class="meta">Version: {{ version }}</div>
       </section>
@@ -151,6 +165,26 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+.play-button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+button.play-button-run {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  min-width: 200px;
+}
+
+.play-button-edit {
+  border-left: 1px solid hsl(15, 100%, 40%);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  min-width: 40px;
+  padding: 0 4px;
+}
+
 .primary-nav,
 .aside-nav {
   display: flex;

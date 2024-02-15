@@ -43,3 +43,47 @@ body {
 button {
   font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
 }
+
+:root {
+  --meka-color-bnet-blue-800: #003f7a;
+  --meka-color-bnet-blue-700: #005aad;
+  --meka-color-bnet-blue-600: #0074e0;
+  --meka-color-bnet-blue-500: #148eff;
+  --meka-color-bnet-blue-400: #47a6ff;
+  --meka-color-bnet-blue-300: #7abfff;
+  --meka-color-bnet-blue-200: #add8ff;
+  --meka-color-bnet-blue-100: #e0f0ff;
+  --meka-color-bnet-gray-700: #111218;
+  --meka-color-bnet-gray-600: #15171e;
+  --meka-color-bnet-gray-500: #1a1c23;
+  --meka-color-bnet-gray-400: #22242c;
+  --meka-color-bnet-gray-300: #292b33;
+  --meka-color-bnet-gray-100: #d5d7dd;
+  --meka-color-bnet-gray-50: #ebecef;
+  --meka-color-bnet-green-600: #54a800;
+  --meka-color-bnet-green-500: #6cdb00;
+  --meka-color-bnet-yellow-600: #cc9000;
+  --meka-color-bnet-yellow-500: #ffb400;
+  --meka-color-bnet-red-900: #420000;
+  --meka-color-bnet-red-800: #580000;
+  --meka-color-bnet-red-600: #b10000;
+  --meka-color-bnet-red-500: #dd0000;
+  --meka-color-bnet-white: #ffffff;
+  --meka-color-bnet-white-84: rgba(255, 255, 255, 0.84);
+  --meka-color-bnet-white-72: rgba(255, 255, 255, 0.72);
+  --meka-color-bnet-white-60: rgba(255, 255, 255, 0.6);
+  --meka-color-bnet-white-48: rgba(255, 255, 255, 0.48);
+  --meka-color-bnet-white-36: rgba(255, 255, 255, 0.36);
+  --meka-color-bnet-white-24: rgba(255, 255, 255, 0.24);
+  --meka-color-bnet-white-18: rgba(255, 255, 255, 0.18);
+  --meka-color-bnet-white-12: rgba(255, 255, 255, 0.12);
+  --meka-color-bnet-white-6: rgba(255, 255, 255, 0.06);
+  --meka-color-bnet-white-3: rgba(255, 255, 255, 0.03);
+  --meka-color-bnet-black: #000000;
+  --meka-color-bnet-black-72: rgba(0, 0, 0, 0.72);
+  --meka-color-bnet-black-60: rgba(0, 0, 0, 0.6);
+  --meka-color-bnet-black-48: rgba(0, 0, 0, 0.48);
+  --meka-color-bnet-black-24: rgba(0, 0, 0, 0.24);
+  --meka-color-bnet-black-12: rgba(0, 0, 0, 0.12);
+  --meka-color-bnet-black-6: rgba(0, 0, 0, 0.06);
+}

@@ -2,7 +2,8 @@
 import { reactive } from "vue";
 import { open } from "@tauri-apps/api/shell";
 
-const { variant, text, href } = defineProps<{
+const { variant, text, href, disabled } = defineProps<{
+  disabled?: boolean;
   variant?: string;
   text?: string;
   href?: string;
@@ -13,6 +14,7 @@ const emit = defineEmits(["click"]);
 const classObject = reactive({
   [`variant-${variant}`]: !!variant,
   [`text-${text}`]: !!text,
+  disabled: disabled,
 });
 
 const onClick = (e: MouseEvent) => {
@@ -63,6 +65,10 @@ button:hover {
   cursor: pointer;
 }
 
+button.disabled {
+  opacity: 0.6;
+}
+
 .variant-play {
   background: #aa2409;
   height: 56px;
@@ -89,6 +95,34 @@ button:hover {
   justify-content: center;
   border-radius: 8px;
   filter: brightness(100%);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+button.variant-install {
+  height: 32px;
+  color: #fff;
+  background: #0074e0;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+button.variant-remove {
+  height: 32px;
+  color: #fff;
+  background: #b10000;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
   text-align: center;
   font-size: 16px;
   font-weight: 600;

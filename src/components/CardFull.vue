@@ -31,7 +31,7 @@ const emit = defineEmits(["back"]);
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 8px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(49, 51, 57, 0.8);
   border-radius: 8px;
 }
 
@@ -43,7 +43,6 @@ const emit = defineEmits(["back"]);
 
 .card-full-title {
   color: white;
-  font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
   font-size: 52px;
   font-weight: 700;
   text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, 0.8);
