@@ -1,10 +1,9 @@
 
 # Under Development
 
-![main](https://github.com/JiLiZART/sirus-next-launcher/blob/master/screenshots/SCR-20240209-qeaq.jpeg?raw=true)
-![news](https://github.com/JiLiZART/sirus-next-launcher/blob/master/screenshots/SCR-20240209-qecq.jpeg?raw=true)
-
-# Tauri + Vue 3 + TypeScript
+![main](https://github.com/JiLiZART/sirus-next-launcher/blob/master/screenshots/SCR-20240215-ecpv.jpeg)
+![news](https://github.com/JiLiZART/sirus-next-launcher/blob/master/screenshots/SCR-20240215-ecyv.jpeg)
+![addons](https://github.com/JiLiZART/sirus-next-launcher/blob/master/screenshots/SCR-20240215-edbw.jpeg)
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
