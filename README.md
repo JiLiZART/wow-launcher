@@ -1,3 +1,15 @@
+# Motivation
+
+This Launcher based on https://tauri.app/ (better alternative to electron)
+
+# Key Features
+
+- [ ] Torrent update support
+- [ ] Addons installer
+- [ ] Server infrastructure for addons information
+- [ ] Server infrastructure for server news
+- [ ] Fully crosslatform (native builds for MacOS/Windows/Linux
+
 
 # Under Development
 
