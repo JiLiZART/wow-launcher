@@ -1,0 +1,22 @@
+[package]
+name = "tauri-plugin-torrent"
+version = "0.1.0"
+authors = [ "You" ]
+description = "Tauri plugin for torrent management"
+edition = "2021"
+rust-version = "1.77.2"
+exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+links = "tauri-plugin-torrent"
+
+[dependencies]
+tauri = { version = "2.4.0" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2"
+tokio = { version = "1.0", features = ["full"] }
+rusty_torrent = "0.1.0"
+futures = "0.3"
+async-trait = "0.1"
+
+[build-dependencies]
+tauri-plugin = { version = "2.1.0", features = ["build"] }

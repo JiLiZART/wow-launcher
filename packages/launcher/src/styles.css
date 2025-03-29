@@ -17,14 +17,26 @@ body {
   max-height: 668px;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+#app {
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 8px;
   height: 18px;
-  /*background: rgba(91 91 91 / 50%);*/
+  background: rgba(91 91 91 / 50%);
   background-clip: padding-box;
 }
 

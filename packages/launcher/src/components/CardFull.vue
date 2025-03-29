@@ -18,8 +18,8 @@ const emit = defineEmits(["back"]);
       <div class="card-full-title">{{ item.title }}</div>
       <div class="card-full-text" v-html="item.description"></div>
       <div class="card-full-actions">
-        <a href="#">Discuss</a>
-        <Button @click="emit('back')">Back</Button>
+        <Button variant="nav" href="#">Discuss</Button>
+        <Button variant="nav" @click="emit('back')">Back</Button>
       </div>
     </div>
   </div>
@@ -33,6 +33,29 @@ const emit = defineEmits(["back"]);
   padding: 8px;
   background: rgba(49, 51, 57, 0.8);
   border-radius: 8px;
+}
+
+.card-full-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: rgba(91 91 91 / 50%);
+}
+
+.card-full-container::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(91 91 91 / 50%);
+}
+
+.card-full-container::-webkit-scrollbar-thumb {
+  /* background-color: #000000;
+  border: 2px solid #555555; */
+
+  /* height: 6px; */
+  /* border: 4px solid rgba(0 0 0 / 0%); */
+  /* background-clip: padding-box; */
+  background-color: #aeb3b9;
+  /* -webkit-border-radius: 7px; */
+  -webkit-box-shadow: inset -1px -1px 0 rgba(0 0 0 / 5%),
+    inset 1px 1px 0 rgba(0 0 0 / 5%);
 }
 
 .card-full {
@@ -74,5 +97,11 @@ const emit = defineEmits(["back"]);
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.card-full-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 </style>

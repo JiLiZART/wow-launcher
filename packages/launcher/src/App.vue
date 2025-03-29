@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import CardList from "./components/CardList.vue";
-import CardFull from "./components/CardFull.vue";
+
 import Layout from "./components/Layout.vue";
 import ProgressBar from "./components/ProgressBar.vue";
 import ServerStatus from "./components/ServerStatus.vue";
@@ -27,21 +26,12 @@ import {
 } from "./api";
 
 const version = ref("0.0.0");
-const items = ref<NewsResponse["data"]>([]);
-const cardItem = ref<NewsItem>();
+
 const statusRealms = ref<StatusRealm[]>([]);
 const online = ref(0);
 const viewState = ref<"news" | "addons">("news");
 
 console.log("getVersion", getVersion);
-
-function showCard(item: NewsItem) {
-  cardItem.value = item;
-}
-
-function hideCard() {
-  cardItem.value = undefined;
-}
 
 function viewNews() {
   viewState.value = "news";
@@ -59,12 +49,6 @@ onMounted(async () => {
   if (status) {
     statusRealms.value = status.realms;
     online.value = status.online_count;
-  }
-
-  const news = await httpGet<NewsResponse>("https://api.sirus.su/api/news");
-
-  if (news?.data) {
-    items.value = news.data.splice(0, 3);
   }
 
   version.value = await getVersion();
@@ -176,13 +160,9 @@ onMounted(async () => {
       </aside>
     </template>
 
-    <sction v-if="viewState === 'addons'">
+    <template v-if="viewState === 'addons'">
       <Addons />
-    </sction>
-    <section v-if="viewState === 'news'">
-      <CardFull v-if="cardItem" :item="cardItem" @back="hideCard" />
-      <CardList v-else :items="items" @show="showCard" />
-    </section>
+    </template>
 
     <template #aside>
       <div id="logo"></div>
@@ -226,10 +206,6 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-#app {
-  width: 100%;
-}
-
 .play-button {
   position: relative;
   display: flex;
